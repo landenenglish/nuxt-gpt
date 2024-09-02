@@ -13,7 +13,15 @@ type ChatHistory = ChatItem[]
 
 const chatHistory = useLocalStorage<ChatHistory>('chat-history-dummy', [])
 
-const pushToChatHistory = (message: string, isUser: boolean) => {
+const chatContainer = ref<HTMLElement | null>(null)
+
+const scrollToBottom = () => {
+  if (chatContainer.value) {
+    chatContainer.value.scrollTop = chatContainer.value.scrollHeight
+  }
+}
+
+const pushToChatHistory = async (message: string, isUser: boolean) => {
   if (!message) return
 
   chatHistory.value.push({
@@ -21,6 +29,9 @@ const pushToChatHistory = (message: string, isUser: boolean) => {
     isUser,
     writtenAt: new Date().toISOString(),
   })
+
+  await nextTick()
+  scrollToBottom()
 }
 
 const { execute, status } = await useFetch('/api/chat', {
@@ -49,6 +60,7 @@ const handleSubmit = () => {
   <ClientOnly>
     <div class="flex h-full flex-col justify-between p-4">
       <div
+        ref="chatContainer"
         class="flex flex-col space-y-4 overflow-auto"
         style="max-height: calc(100vh - 120px)"
       >
