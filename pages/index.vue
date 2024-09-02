@@ -56,7 +56,7 @@ const handleSubmit = () => {
         :key="index"
         :class="[
           'max-w-xs rounded-lg p-4',
-          chat.isUser ? 'ml-auto' : 'mr-auto',
+          chat.isUser ? 'ml-auto text-right' : 'mr-auto text-left',
         ]"
       >
         <div>{{ chat.message }}</div>
