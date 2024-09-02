@@ -1,15 +1,15 @@
 <script setup lang="ts">
-// DefaultView
+onMounted(setAppHeight)
 </script>
 
 <template>
-  <div class="DefaultView">
+  <div class="DefaultView full-height">
     <slot />
   </div>
 </template>
 
 <style lang="scss">
-.DefaultView {
-  height: calc(100vh - 43px);
-}
+// .DefaultView {
+
+// }
 </style>
