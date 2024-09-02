@@ -20,8 +20,19 @@ export default defineNuxtConfig({
   primevue: {
     options: { unstyled: true },
     importPT: {
-      as: 'lara',
-      from: resolve(__dirname, './presets/lara/'),
+      as: 'aura',
+      from: resolve(__dirname, './presets/aura/'),
+    },
+  },
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+        },
+      ],
     },
   },
 })
