@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { formatDistanceToNow } from 'date-fns'
+import { marked } from 'marked'
 
 const prompt = ref('')
 
@@ -15,11 +16,16 @@ const chatHistory = useLocalStorage<ChatHistory>('chat-history-dummy', [])
 
 const chatContainer = ref<HTMLElement | null>(null)
 
-const scrollToBottom = () => {
+const scrollToBottom = async () => {
+  await nextTick()
   if (chatContainer.value) {
-    chatContainer.value.scrollTop = chatContainer.value.scrollHeight
+    chatContainer.value.scrollTo({
+      top: chatContainer.value.scrollHeight,
+      behavior: 'smooth',
+    })
   }
 }
+onMounted(scrollToBottom)
 
 const pushToChatHistory = async (message: string, isUser: boolean) => {
   if (!message) return
@@ -30,7 +36,6 @@ const pushToChatHistory = async (message: string, isUser: boolean) => {
     writtenAt: new Date().toISOString(),
   })
 
-  await nextTick()
   scrollToBottom()
 }
 
@@ -72,7 +77,7 @@ const handleSubmit = () => {
             chat.isUser ? 'ml-auto text-right' : 'mr-auto text-left',
           ]"
         >
-          <div>{{ chat.message }}</div>
+          <div v-html="marked.parse(chat.message)" />
           <div class="mt-1 text-xs text-gray-500">
             {{ formatDistanceToNow(chat.writtenAt, { addSuffix: true }) }}
           </div>
