@@ -1,3 +1,5 @@
+import primeui from 'tailwindcss-primeui'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,5 +14,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require('tailwindcss-primeui')],
+  plugins: [primeui],
+  darkMode: ['selector', '[class*="app-dark"]'],
 }

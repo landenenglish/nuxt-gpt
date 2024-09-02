@@ -19,8 +19,8 @@ export default defineNuxtConfig({
   primevue: {
     options: { unstyled: true },
     importPT: {
-      as: 'Aura',
-      from: resolve(__dirname, './presets/aura/'),
+      as: 'lara',
+      from: resolve(__dirname, './presets/lara/'),
     },
   },
 })

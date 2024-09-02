@@ -2,13 +2,6 @@
 import TerminalService from 'primevue/terminalservice'
 
 const checked = ref(true)
-const selectedCity = ref(null)
-const cities = [
-  { name: 'New York', value: 'new-york' },
-  { name: 'Los Angeles', value: 'los-angeles' },
-  { name: 'Chicago', value: 'chicago' },
-  { name: 'Houston', value: 'houston' },
-]
 
 const sliderValue = ref(75)
 
@@ -77,14 +70,6 @@ const headingMessage = 'Nuxt + PrimeVue + TailwindCSS'
     /><Checkbox v-model="checked" :binary="true" />
     <Divider />
 
-    <Dropdown
-      v-model="selectedCity"
-      :options="cities"
-      option-label="name"
-      placeholder="Select a City"
-      checkmark
-      :highlight-on-select="false"
-    />
     <Divider />
 
     <FloatLabel class="my-6">
