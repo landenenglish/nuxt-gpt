@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-config-standard-vue"],
+  "rules": {
+    "declaration-no-important": true,
+    "color-named": "never"
+  }
+}
