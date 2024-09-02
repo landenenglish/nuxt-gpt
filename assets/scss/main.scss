@@ -5,3 +5,7 @@
 body {
   @apply dark:bg-surface-950 dark:text-surface-0;
 }
+
+[v-cloak] {
+  display: none;
+}
