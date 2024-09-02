@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
+    '@nuxtjs/color-mode',
   ],
 
   css: ['~/assets/scss/main.scss'],

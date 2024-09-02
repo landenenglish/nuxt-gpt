@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const isDark = useDark({
-  valueDark: 'app-dark',
-})
+const colorMode = useColorMode()
 
-const toggleDark = useToggle(isDark)
+const isDark = computed(() => colorMode.value === 'dark')
+
+const toggleDark = () => {
+  colorMode.preference = isDark.value ? 'light' : 'dark'
+}
 
 const icon = computed(() => (isDark.value ? 'pi-moon' : 'pi-sun'))
 </script>

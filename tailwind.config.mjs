@@ -15,5 +15,5 @@ export default {
     extend: {},
   },
   plugins: [primeui],
-  darkMode: ['selector', '[class*="app-dark"]'],
+  darkMode: ['selector', '[class*="dark-mode"]'],
 }
