@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "@primevue/nuxt-module": "^4.0.5",
+    "dotenv": "^16.4.5",
     "nuxt": "^3.13.0",
+    "openai": "^4.57.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.5",
     "sass": "^1.77.8",

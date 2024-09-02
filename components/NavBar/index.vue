@@ -3,16 +3,16 @@ import type { MenuItem } from 'primevue/menuitem'
 import Menubar from 'primevue/menubar'
 
 const items: MenuItem[] = [
-  {
-    label: 'Home',
-    icon: 'pi pi-home',
-    route: '/',
-  },
-  {
-    label: 'About',
-    icon: 'fas fa-info-circle',
-    route: '/about',
-  },
+  // {
+  //   label: 'Home',
+  //   icon: 'pi pi-home',
+  //   route: '/',
+  // },
+  // {
+  //   label: 'About',
+  //   icon: 'fas fa-info-circle',
+  //   route: '/about',
+  // },
 ] as const
 
 const router = useRouter()

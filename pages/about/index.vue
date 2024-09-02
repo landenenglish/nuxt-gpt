@@ -4,10 +4,7 @@
 
 <template>
   <div class="About">
-    <Message severity="success">Success Message</Message>
-    <Message severity="info">Info Message</Message>
-    <Message severity="warn">Warning Message</Message>
-    <Message severity="error">Error Message</Message>
+    <h1>About</h1>
   </div>
 </template>
 
