@@ -63,10 +63,10 @@ const handleSubmit = () => {
 
 <template>
   <ClientOnly>
-    <div class="flex h-full flex-col justify-between p-4">
+    <div class="flex h-full flex-col justify-between">
       <div
         ref="chatContainer"
-        class="flex flex-col space-y-4 overflow-auto"
+        class="flex flex-col space-y-4 overflow-auto p-4"
         style="max-height: calc(100vh - 120px)"
       >
         <div
@@ -84,7 +84,7 @@ const handleSubmit = () => {
         </div>
       </div>
 
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-4 p-4">
         <InputText
           v-model="prompt"
           placeholder="Enter a prompt"
