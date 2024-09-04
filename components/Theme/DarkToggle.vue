@@ -7,13 +7,14 @@ const toggleDark = () => {
   colorMode.preference = isDark.value ? 'light' : 'dark'
 }
 
-const icon = computed(() => (isDark.value ? 'pi-moon' : 'pi-sun'))
+const icon = computed(() => {
+  if (colorMode.unknown) return 'pi pi-spin pi-spinner'
+  return isDark.value ? 'pi pi-sun' : 'pi pi-moon'
+})
 </script>
 
 <template>
-  <ClientOnly>
-    <button type="button" class="topbar-item" @click="toggleDark()">
-      <i :class="['pi', icon]" />
-    </button>
-  </ClientOnly>
+  <button type="button" class="topbar-item" @click="toggleDark">
+    <i :class="icon" />
+  </button>
 </template>
